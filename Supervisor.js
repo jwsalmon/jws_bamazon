@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
 	if (err) throw err;
 	console.log('connected as id: ' + connection.threadId)
-	executiveOptions();
+	supervisorOptions();
 });
 
 function supervisorOptions(){
@@ -24,7 +24,7 @@ function supervisorOptions(){
 	}]).then(function(answer){
 		if(answer.input === '1) View Sales By Department'){
 			console.log('');
-			connection.query('SELECT DepartmentId,DepartmentName,OverheadCost,TotalSales,(sum(TotalSales-OverheadCost)) as profit  FROM departments', function(err, res){
+			connection.query('SELECT DepartmentId,DepartmentName,OverheadCost,TotalSales, (sum(TotalSales-OverheadCost)) as profit  FROM departments group by DepartmentId,DepartmentName,OverheadCost,TotalSales', function(err, res){
 				console.log('SALES BY DEPARTMENT');
 				for(i=0; i<res.length; i++){
 					//var profit = res[i].TotalSales - res[i].OverheadCost;
@@ -52,7 +52,7 @@ function newTransaction(){
 		message: 'Would you like to perform another transaction?'
 	}]).then(function(answer){
 		if(answer.choice){
-			executiveOptions();
+			supervisorOptions();
 		}
 		else{
 			console.log('Have a good day');

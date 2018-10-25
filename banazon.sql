@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS Bamazon_db; 
 CREATE DATABASE Bamazon_db;
 
 USE Bamazon_db;
@@ -22,7 +23,7 @@ VALUES ('POTENZA RE050', 'Tires', 166.75, 12),
        ('I saw the speed limit just did not see you Classic T-Shirt', 'Apparel', 22.95, 3),
        ('Beam Electronics Universal Smartphone Car Air Vent Mount', 'Accessories', 7.99, 4),
        ('LinkStyle Car Organizer Pocket', 'Accessories', 9.59, 20),
-       ('illumiNITE High Performance Studio Enclosed Car Subwoofers', 'Electronics', 299.99, 2)
+       ('illumiNITE High Performance Studio Enclosed Car Subwoofers', 'Electronics', 299.99, 2);
 
 CREATE TABLE departments (
 	DepartmentId INT NOT NULL AUTO_INCREMENT,
