@@ -15,6 +15,7 @@ Managers can:
 2) View low inventory
 3) Add to inventory
 4) Add new product
+
 click link to download Demo:
 ![Manager demo](./ManagerDemo.mov)
 
@@ -23,5 +24,6 @@ This module lets a supervisor analyis store
 Supervisor can:
 1) View Sales By Department
 2) Create New Department
+
 click link to download Demo:
 ![Supervisor Demo](./SupervisorDemo.mov)
